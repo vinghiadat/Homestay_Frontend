@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CheckinCheckoutComponent } from './checkin-checkout.component';
+
+describe('CheckinCheckoutComponent', () => {
+  let component: CheckinCheckoutComponent;
+  let fixture: ComponentFixture<CheckinCheckoutComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [CheckinCheckoutComponent]
+    });
+    fixture = TestBed.createComponent(CheckinCheckoutComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

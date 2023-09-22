@@ -1,13 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>HomestayFrontend</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="utf-8" />
+  <title>Hotel</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <!-- Favicons -->
+  <link href="./assets/img/favicon.png" rel="icon" />
+  <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="./assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+  <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="assets/css/flaticon.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/linearicons.css" type="text/css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #555555;
+    }
+  </style>
 </head>
-<body>
+
+<body class="mat-typography">
   <app-root></app-root>
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="./assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    "use strict";
+
+    (function ($) {
+      /*------------------
+      Preloader
+  --------------------*/
+      $(window).on("load", function () {
+        $(".loader").fadeOut();
+        $("#preloder").delay(200).fadeOut("slow");
+      });
+
+      /*------------------
+      Background Set
+  --------------------*/
+      $(".set-bg").each(function () {
+        var bg = $(this).data("setbg");
+        $(this).css("background-image", "url(" + bg + ")");
+      });
+
+      /*------------------
+  Navigation
+--------------------*/
+      $(".mobile-menu").slicknav({
+        prependTo: "#mobile-menu-wrap",
+        allowParentLinks: true,
+      });
+
+      /*------------------
+  Date Picker
+--------------------*/
+      $(".datepicker-1").datepicker();
+      $(".datepicker-2").datepicker();
+
+      /*------------------
+  Nice Selector
+--------------------*/
+      $(".suit-select").niceSelect();
+
+      /*------------------
+      Room Pic Slider
+  --------------------*/
+      $(".room-pic-slider").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        items: 1,
+        dots: false,
+        navText: [
+          '<i class="lnr lnr-arrow-left"></i>',
+          '<i class="lnr lnr-arrow-right"></i>',
+        ],
+        smartSpeed: 800,
+        autoplay: false,
+      });
+
+      /*-------------------
+  Quantity change
+--------------------- */
+      var proQty = $(".pro-qty");
+      proQty.prepend('<span class="dec qtybtn">-</span>');
+      proQty.append('<span class="inc qtybtn">+</span>');
+      proQty.on("click", ".qtybtn", function () {
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+        if ($button.hasClass("inc")) {
+          var newVal = parseFloat(oldValue) + 1;
+        } else {
+          // Don't allow decrementing below zero
+          if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+          } else {
+            newVal = 0;
+          }
+        }
+        $button.parent().find("input").val(newVal);
+      });
+
+      /*------------------
+      Magnific Popup
+  --------------------*/
+      $(".pop-up").magnificPopup({
+        type: "iframe",
+      });
+    })(jQuery);
+  </script>
 </body>
+
 </html>

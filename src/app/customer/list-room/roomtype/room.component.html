@@ -1,0 +1,95 @@
+<div class="rooms-page-item">
+  <div class="row">
+    <div class="col-lg-6">
+      <div [id]="'demo' + i" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div *ngFor="let imgUrl of imageUrls" class="carousel-item active">
+            <img
+              [src]="imgUrl"
+              alt="New York"
+              class="d-block w-100"
+              style="height: 407.9px"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          [attr.data-bs-target]="'#demo' + i"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          [attr.data-bs-target]="'#demo' + i"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="room-text">
+        <div class="room-title">
+          <h2>{{ roomType.name }}</h2>
+          <div class="room-price">
+            <span>Chỉ từ</span>
+            <h2>{{ roomType.price | number }}đ/</h2>
+            <sub>/night</sub>
+          </div>
+        </div>
+        <div class="room-desc">
+          <p>
+            {{ roomType.bedType }}
+          </p>
+        </div>
+        <div class="room-features">
+          <div class="room-info">
+            <img src="../../../../assets/img/icon/smart-tv.png" alt="" />
+            <span>Ti vi thông minh</span>
+          </div>
+          <div class="room-info">
+            <img src="../../../../assets/img/icon/wifi-signal.png" alt="" />
+            <span>Wifi mạnh</span>
+          </div>
+          <div class="room-info">
+            <img src="../../../../assets/img/icon/eco.png" alt="" />
+            <span>Máy lạnh</span>
+          </div>
+          <div class="room-info">
+            <img src="../../../../assets/img/icon/parking-area.png" alt="" />
+            <span>Bãi đậu xe</span>
+          </div>
+          <div class="room-info last">
+            <img src="../../../../assets/img/icon/settings.png" alt="" />
+            <span>Hồ bơi</span>
+          </div>
+        </div>
+        <div
+          style="
+            border: 2px solid #ae954b;
+            width: 34%;
+            padding: 15px 0;
+            padding-left: 34px;
+            padding-right: 64px;
+          "
+        >
+          <a
+            [routerLink]="['/rooms', roomType.id]"
+            class="primary-btn"
+            style="font-weight: bold"
+            >Đặt ngay
+            <img src="../../../../assets/img/icon/right-arrow.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

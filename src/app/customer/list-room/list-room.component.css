@@ -1,0 +1,59 @@
+.hero-section {
+  height: 428px;
+  padding-top: 207px;
+  background-image: url("../../../assets/img/room/rooms-bg.jpg");
+}
+
+.hero-text {
+  position: relative;
+  padding-left: 270px;
+}
+
+.hero-text h1 {
+  font-size: 96px;
+  color: #ffffff;
+  line-height: 96px;
+}
+
+.hero-text .page-nav a {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Taviraj", serif;
+  position: absolute;
+  left: 49px;
+  top: 30%;
+}
+
+.hero-text .page-nav a i {
+  color: #ae9548;
+  position: relative;
+  top: 2px;
+}
+
+.hero-text .page-nav a.left-nav i {
+  margin-right: 20px;
+}
+
+.hero-text .page-nav a.right-nav {
+  left: auto;
+  right: 49px;
+}
+
+.hero-text .page-nav a.right-nav i {
+  margin-left: 20px;
+}
+.set-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+/*---------------------
+  Rooms Section
+-----------------------*/
+
+.room-section {
+  padding-bottom: 0;
+}

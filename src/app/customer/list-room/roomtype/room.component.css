@@ -1,0 +1,121 @@
+.rooms-page-item {
+  -webkit-box-shadow: 2px 15px 75px 6px #ebebeb;
+  box-shadow: 2px 15px 75px 6px #ebebeb;
+  margin-bottom: 100px;
+}
+
+.rooms-page-item .room-pic-slider .single-room-pic img {
+  height: 379px;
+}
+
+.rooms-page-item .room-pic-slider.owl-carousel .owl-nav button[type="button"] {
+  color: #ae9548;
+  font-size: 26px;
+  height: 69px;
+  width: 52px;
+  background: #353535;
+  line-height: 72px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-34.5px);
+  transform: translateY(-34.5px);
+}
+
+.rooms-page-item
+  .room-pic-slider.owl-carousel
+  .owl-nav
+  button[type="button"].owl-next {
+  left: auto;
+  right: 0;
+}
+
+.rooms-page-item .room-text {
+  padding-top: 33px;
+  padding-right: 30px;
+  padding-bottom: 34px;
+}
+
+.rooms-page-item .room-text .room-title {
+  overflow: hidden;
+  margin-bottom: 18px;
+  padding-right: 40px;
+}
+
+.rooms-page-item .room-text .room-title h2 {
+  float: left;
+  font-size: 36px;
+  color: #2d220f;
+}
+
+.rooms-page-item .room-text .room-title .room-price {
+  float: right;
+  position: relative;
+}
+
+.rooms-page-item .room-text .room-title .room-price span {
+  position: absolute;
+  left: -40px;
+  bottom: 7px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 14px;
+  color: #2d220f;
+}
+
+.rooms-page-item .room-text .room-title .room-price h2 {
+  font-size: 36px;
+  color: #081624;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.rooms-page-item .room-text .room-title .room-price sub {
+  position: absolute;
+  right: -37px;
+  bottom: 13px;
+  color: #2d220f;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.rooms-page-item .room-text .room-desc {
+  margin-bottom: 20px;
+}
+
+.rooms-page-item .room-text .room-desc p {
+  font-size: 16px;
+  color: #242424;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+}
+
+.rooms-page-item .room-text .room-features {
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+
+.rooms-page-item .room-text .room-features .room-info {
+  float: left;
+  text-align: center;
+  margin-right: 38px;
+}
+
+.rooms-page-item .room-text .room-features .room-info.last {
+  margin-right: 0;
+}
+
+.rooms-page-item .room-text .room-features .room-info i {
+  display: block;
+  color: #ae9548;
+  margin-bottom: -4px;
+}
+
+.rooms-page-item .room-text .room-features .room-info span {
+  display: block;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #2d220f;
+}
