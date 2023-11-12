@@ -16,9 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ListRoomComponent } from './customer/list-room/list-room.component';
 import { CheckinCheckoutComponent } from './customer/checkin-checkout/checkin-checkout.component';
-import { BookingComponent } from './src/app/customer/booking/booking.component';
 import { RoomComponent } from './customer/list-room/roomtype/room.component';
 import { RoomdetailsComponent } from './customer/list-room/roomtype/roomdetails/roomdetails.component';
+import { HistoryComponent } from './customer/history/history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +33,9 @@ import { RoomdetailsComponent } from './customer/list-room/roomtype/roomdetails/
     ListRoomComponent,
     ListRoomComponent,
     CheckinCheckoutComponent,
-    BookingComponent,
     RoomComponent,
     RoomdetailsComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

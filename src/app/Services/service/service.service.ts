@@ -1,24 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { User } from 'src/app/Models/user/user';
 import { AppConfig } from 'src/app/config/AppConfig';
 
+import { Observable, catchError, tap } from 'rxjs';
+import { Service } from 'src/app/Models/service/service';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class ServiceService {
   constructor(private http: HttpClient, private router: Router) {}
-
   //lấy full đường dẫn
   private getFullUrl(endpoint: string): string {
     return `${AppConfig.baseUrl}/${endpoint}`;
   }
-  signUp(user: User): Observable<void> {
-    return this.http.post<void>(this.getFullUrl('api/v1/user/register'), user);
-  }
-  getUserByUsername(username: string): Observable<User> {
-    return this.http.get<User>(this.getFullUrl(`api/v1/user/username/${username}`));
+  getAllServices(): Observable<Service[]> {
+    return this.http.get<Service[]>(this.getFullUrl(`api/v1/service`));
   }
 }

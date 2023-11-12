@@ -23,23 +23,22 @@ export class AuthService {
     );
   }
 
-  //set user
+  //set user gán giá trị dùng trong lúc đang nhập thành công
   setUsername(username: string): void {
     localStorage.setItem('username', JSON.stringify(username));
   }
 
-  //get user
+  //get user 
   getUsername(): string {
     const userString = localStorage.getItem('username');
     return userString != null ? JSON.parse(userString) : null;
   }
 
   //đăng xuất
-  logout(): any {
-    if (this.getUsername() != null) {
-      localStorage.removeItem('user');
+  logout(): void {
+    
+      localStorage.removeItem('username');
       localStorage.removeItem('accessToken');
-    }
   }
 
   //đăng nhập

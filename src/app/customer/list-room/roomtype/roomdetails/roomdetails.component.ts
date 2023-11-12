@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Contract } from 'src/app/Models/contract/contract';
 import { Room } from 'src/app/Models/room/room';
 import { Roomtype } from 'src/app/Models/roomtype/roomtype';
+import { User } from 'src/app/Models/user/user';
+import { AuthService } from 'src/app/Services/auth/auth.service';
+import { ContractService } from 'src/app/Services/contract/contract.service';
 import { ImageService } from 'src/app/Services/image/image.service';
 import { RoomService } from 'src/app/Services/room/room.service';
 import { RoomtypeService } from 'src/app/Services/roomtype/roomtype.service';
+import { UserService } from 'src/app/Services/user/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-roomdetails',
@@ -17,8 +23,13 @@ export class RoomdetailsComponent {
     private route: ActivatedRoute,
     private imageService: ImageService,
     private roomService: RoomService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
+    private userService : UserService,
+    private contractService: ContractService
   ) {}
+  checkin!: Date;
+  checkout!: Date;
   imageUrls: string[] = [];
   errorMessage: string = '';
   // ngOnInit(): void {
@@ -29,9 +40,21 @@ export class RoomdetailsComponent {
   //     });
   //   });
   // }
+  r!: Room;
+   showModal: boolean = false;
   roomType!: Roomtype;
   room: Room[] = [];
+  user!: User;
   ngOnInit(): void {
+    this.userService.getUserByUsername(this.authService.getUsername())
+    .subscribe({
+      next: (response: User) => {
+        this.user = response;
+      },
+      error: (error) => {
+        Swal.fire("Có lỗi",error.error.message,"error");
+      }
+    })
     this.route.params.subscribe((params) => {
       const id = params['id'];
       //RoomType
@@ -69,5 +92,31 @@ export class RoomdetailsComponent {
       });
     });
   }
-  handleReservation(id: number) {}
+  openModal(r: Room) {
+    this.r = r;
+  }
+  handleAccept() {
+    console.log(localStorage.getItem("username"))
+    if(!localStorage.getItem("username")) {
+      Swal.fire('Có lỗi',"Bạn vui lòng đăng nhập để đặt phòng","error");
+      return;
+    }
+    if(this.checkin == undefined || this.checkout == undefined) {
+      Swal.fire("Có lỗi","Vui lòng chọn ngày đến và ngày đi","error");
+      return;
+    }
+    
+    this.contractService.addContract(
+      new Contract(0,this.roomType.name,this.r.numberRoom,0,new Date(),this.checkin,this.checkout,this.user,null,0,'')
+
+    ).subscribe({
+      next: (response: any)=> {
+        Swal.fire('THÀNH CÔNG', "BẠN ĐÃ ĐẶT PHÒNG THÀNH CÔNG","success");
+      },
+      error:(error) => {
+Swal.fire('Thất bại', error.error.message,"error");
+      }
+    })
+  }
 }
+ 

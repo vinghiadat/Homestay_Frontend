@@ -1,12 +1,13 @@
 export class User {
   constructor(
-    private username: string = '',
-    private name: string = '',
-    private password: string = '',
-    private phone: string = '',
-    private email: string = '',
-    private gender: number,
-    private birthday: string = ''
+    public id: number | null = null,
+    public username: string = '',
+    public name: string = '',
+    public password: string = '',
+    public phone: string = '',
+    public email: string = '',
+    public gender: number,
+    public birthday: string = ''
   ) {}
 
   getUsername(): string {

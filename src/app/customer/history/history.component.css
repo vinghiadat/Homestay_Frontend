@@ -1,0 +1,499 @@
+.hero-section {
+    background-image: url("https://www.londonhousehotels.com/wp-content/uploads/2017/11/600x300_90_hotel-1.jpg");
+    padding: 70px 0 62px;
+    position: relative;
+    text-align: center;
+    line-height: 1;
+    background-image: url(https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://www.londonhousehotels.com/wp-content/themes/hotelmaster/images/page-title-background.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    margin-top: 80px;
+}
+
+/*---------------------
+  Rooms Section
+-----------------------*/
+
+.room-section {
+    padding-bottom: 0;
+}
+
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 5px;
+    color: #21cc7a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.subheading {
+    color: #2eca6a;
+}
+
+.container1 {
+    max-width: 1044px;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: block;
+    text-align: left;
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.carousel>input {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.carousel>input:nth-of-type(6):checked~.carousel__slides .carousel__slide:first-of-type {
+    margin-left: -500%;
+}
+
+.carousel>input:nth-of-type(5):checked~.carousel__slides .carousel__slide:first-of-type {
+    margin-left: -400%;
+}
+
+.carousel>input:nth-of-type(4):checked~.carousel__slides .carousel__slide:first-of-type {
+    margin-left: -300%;
+}
+
+.carousel>input:nth-of-type(3):checked~.carousel__slides .carousel__slide:first-of-type {
+    margin-left: -200%;
+}
+
+.carousel>input:nth-of-type(2):checked~.carousel__slides .carousel__slide:first-of-type {
+    margin-left: -100%;
+}
+
+.carousel>input:nth-of-type(1):checked~.carousel__slides .carousel__slide:first-of-type {
+    margin-left: 0%;
+}
+
+.carousel>input:nth-of-type(1):checked~.carousel__thumbnails li:nth-of-type(1) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel>input:nth-of-type(2):checked~.carousel__thumbnails li:nth-of-type(2) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel>input:nth-of-type(3):checked~.carousel__thumbnails li:nth-of-type(3) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel>input:nth-of-type(4):checked~.carousel__thumbnails li:nth-of-type(4) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel>input:nth-of-type(5):checked~.carousel__thumbnails li:nth-of-type(5) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel>input:nth-of-type(6):checked~.carousel__thumbnails li:nth-of-type(6) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel__slides {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.carousel__slide {
+    position: relative;
+    display: block;
+    flex: 1 0 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 300ms ease-out;
+    vertical-align: top;
+    box-sizing: border-box;
+    white-space: normal;
+}
+
+.carousel__slide figure {
+    display: flex;
+    margin: 0;
+}
+
+.carousel__slide div {
+    @include aspect-ratio(3, 2);
+    width: 100%;
+}
+
+.carousel__slide img {
+    display: block;
+    flex: 1 1 auto;
+    object-fit: cover;
+}
+
+.carousel__slide figcaption {
+    padding: 20px 20px 0px 20px;
+    padding-top: 0;
+    flex: 0 0 auto;
+    width: 25%;
+    min-width: 150px;
+    text-align: justify;
+}
+
+.carousel__slide .credit {
+    margin-top: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.carousel__slide.scrollable {
+    overflow-y: scroll;
+}
+
+.carousel__thumbnails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin: 0 -10px;
+}
+
+.carousel__slides+.carousel__thumbnails {
+    margin-top: 20px;
+}
+
+.carousel__thumbnails li {
+    flex: 1 1 auto;
+    max-width: calc((100% / 6) - 20px);
+    margin: 0 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.carousel__thumbnails label {
+    display: block;
+    @include aspect-ratio(1, 1);
+}
+
+.carousel__thumbnails label:hover,
+.carousel__thumbnails label:focus {
+    cursor: pointer;
+}
+
+.carousel__thumbnails label img {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+    transition: all 300ms ease-in-out;
+}
+
+.carousel__thumbnails img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gdlr-room-title-wrapper {
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    line-height: 20px;
+}
+
+.gdlr-room-title {
+    color: #4b4b4b;
+    font-weight: 700;
+    font-size: 17px;
+    float: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* icon */
+.gdlr-hotel-room-info-new-style {
+    padding-bottom: 24px;
+    padding-top: 20px;
+    margin-bottom: 35px;
+}
+
+.gdlr-room-info-new-style {
+    float: left;
+    margin-right: 38px;
+    text-align: center;
+    min-width: 50px;
+}
+
+.gdlr-room-info-new-style .gdlr-head {
+    display: block;
+    margin-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.gdlr-room-info-new-style .gdlr-head img {
+    max-height: 24px;
+    display: inline !important;
+    width: auto !important;
+}
+
+.gdlr-room-info-new-style .gdlr-tail {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+h5 {
+    font-family: "Lato";
+    line-height: 1.3;
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.section {
+    position: relative;
+    height: 100vh;
+}
+
+.section .section-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#booking {
+    font-family: "Montserrat", sans-serif;
+}
+
+.booking-form {
+    padding: 0px 40px 40px;
+    max-width: 642px;
+    width: 100%;
+    margin: auto;
+    background: #fafafa;
+}
+
+.booking-form .form-header {
+    padding: 40px;
+    margin: 0px -40px 30px;
+    background: #2eca6a;
+}
+
+.booking-form .form-header h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 30px;
+    margin: 0;
+    color: #fff;
+}
+
+.booking-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+    background-color: #efefef;
+    height: 50px;
+    padding: 7px 20px 0px;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+.booking-form select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 24px;
+    text-align: center;
+    pointer-events: none;
+    height: 50px;
+    line-height: 50px;
+    color: #2d343b;
+    font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+    content: "\279C";
+    display: block;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    text-transform: uppercase;
+    color: #2d343b;
+    font-weight: 700;
+    line-height: 24px;
+    height: 24px;
+    font-size: 16px;
+    pointer-events: none;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.booking-form .form-group.input-not-empty .form-label {
+    top: -10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.booking-form .form-group:not(.input-not-empty) .form-control:not(:focus) {
+    color: transparent;
+}
+
+.booking-form .form-group .form-control:focus+.form-label {
+    top: -10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.booking-form .form-checkbox input {
+    position: absolute !important;
+    margin-left: -9999px !important;
+    visibility: hidden !important;
+}
+
+.booking-form .form-checkbox label {
+    position: relative;
+    padding-top: 4px;
+    padding-left: 30px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.booking-form .form-checkbox label+label {
+    margin-left: 15px;
+}
+
+.booking-form .form-checkbox input+span {
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1c2126;
+    background: #1c2126;
+    border-radius: 50%;
+}
+
+.booking-form .form-checkbox input:checked+span {
+    border-color: #f7c411;
+}
+
+.booking-form .form-checkbox input+span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: #f7c411;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.booking-form .form-checkbox input:not(:checked)+span:after {
+    opacity: 0;
+}
+
+.booking-form .form-checkbox input:checked+span:after {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.booking-form .submit-btn {
+    color: #1c2126;
+    background-color: #f7c411;
+    font-weight: 700;
+    height: 50px;
+    border: none;
+    padding: 0px 50px;
+}
+
+input[type="date"] {
+    background-color: #0080ff;
+    padding: 15px;
+    font-family: "Roboto Mono", monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}

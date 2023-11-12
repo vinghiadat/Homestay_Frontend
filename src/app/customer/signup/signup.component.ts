@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { User } from 'src/app/Models/user/user';
 import { UserService } from 'src/app/Services/user/user.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -38,6 +39,7 @@ export class SignupComponent implements OnInit {
   onSignUp() {
     this.userService.signUp(
       new User(
+        null,
         this.form.value.username,
         this.form.value.name,
         this.form.value.password,
@@ -46,6 +48,14 @@ export class SignupComponent implements OnInit {
         this.form.value.gender,
         this.form.value.birthday
       )
-    );
+    ).subscribe({
+      next: (response: void) => {
+        Swal.fire("Thành công",'Đăng ký thành công','success');
+        this.form.reset();
+      },
+      error: (error) => {
+Swal.fire("Thất bại",error.error.message,'error')
+      }
+    })
   }
 }

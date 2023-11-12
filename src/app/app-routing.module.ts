@@ -5,8 +5,10 @@ import { SignupComponent } from './customer/signup/signup.component';
 import { HomeComponent } from './customer/home/home.component';
 import { ContactComponent } from './customer/contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ListRoomComponent } from './customer/list-room/list-room.component';
+
 import { RoomdetailsComponent } from './customer/list-room/roomtype/roomdetails/roomdetails.component';
+import { ListRoomComponent } from './customer/list-room/list-room.component';
+import { HistoryComponent } from './customer/history/history.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'room-types', component: ListRoomComponent },
   { path: 'rooms/:id', component: RoomdetailsComponent },
+  { path: 'history', component: HistoryComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
