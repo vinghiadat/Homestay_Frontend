@@ -87,6 +87,28 @@ export class HistoryComponent implements OnInit {
       error: (error) => {},
     });
   }
+  deleteById(r: RegisterServiceRespone) {
+    Swal.fire({
+      title: 'Có chắc chắn xóa dịch vụ này không?',
+      showCancelButton: true,
+      confirmButtonText: 'Xóa',
+      cancelButtonText:'Đóng'
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.register.deleteById(r.id).subscribe({
+      next: (response: void) => {
+        Swal.fire("Thành công","Chúc mừng bạn đã xóa dịch vụ thành công","success");
+        this.getRegister(this.user.id!);
+      },
+      error: (error) => {
+        Swal.fire("Thất bại",error.error.message,"error");
+      }
+    })
+      } 
+    })
+    
+  }
   getAllContractByUserId(id: number) {
     this.contractService.getContractByUserId(id).subscribe({
       next: (response: Contract[]) => {

@@ -25,4 +25,7 @@ export class RegisterServicesService {
       this.getFullUrl(`api/v1/register-service/${id}`)
     );
   }
+  deleteById(id: number) :Observable<void> {
+    return this.http.delete<void>(this.getFullUrl(`api/v1/register-service/${id}`));
+  }
 }

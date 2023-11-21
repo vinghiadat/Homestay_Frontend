@@ -202,6 +202,7 @@
                                 <th>Từ ngày</th>
                                 <th>Đến ngày</th>
                                 <th>Trạng thái</th>
+                                <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -224,6 +225,9 @@
                                             *ngIf="r.status == true">
                                             Đã thanh toán
                                         </div>
+                                    </td>
+                                    <td class="text-danger" >
+                                        <span *ngIf="r.status==false" style="cursor: pointer;" (click)="deleteById(r)">Xóa</span>
                                     </td>
                                 </tr>
                             </ng-container>
